@@ -1,0 +1,169 @@
+body {
+  margin: 0;
+  font-family: Arial, sans-serif;
+  background-color: #f9f9f9;
+}
+
+@font-face {
+    font-family: "font";
+    src: url("./Fontspring-DEMO-integralcf-regular.otf");
+}
+
+.nav{
+    height: 40px;
+    width: 100%;
+    font-size: 3rem;
+    font-family:Verdana, Geneva, Tahoma, sans-serif;
+}
+
+/* Container for the feed */
+.feed {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+  gap: 20px;
+  padding: 20px;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+/* Styling for individual posts */
+.post {
+  background-color: white;
+  border-radius: 12px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  height: 390px; /* Adjust height as needed */
+}
+
+/* Ensure images cover the full width and take half the height */
+.post img {
+  width: 100%;
+  height: 50%; /* Takes half the height of the post */
+  object-fit: cover;
+  object-position: center;
+}
+
+/* Container for text */
+.post-content {
+  padding: 10px 20px;
+  height: 50%; /* Takes the remaining half of the height */
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between; /* Pushes content to the top and buttons to the bottom */
+  background-color: #fff;
+  text-align: center;
+}
+
+/* Post title */
+.post-content h2 {
+  font-size: 1.2rem;
+  margin: 10px 5px;
+  color: #333;
+}
+
+/* Photographer name */
+.post-content p {
+  font-size: 0.8rem;
+  color: #444444;
+  margin: 0;
+  line-height: 1.5;
+}
+
+
+.download {
+  background-color: #fff;
+  color: black;
+}
+
+/* Loading indicator */
+.loading {
+  text-align: center;
+  padding: 20px;
+  font-size: 1.2rem;
+  color: #888;
+}
+
+/* Responsive adjustments */
+@media (max-width: 600px) {
+  .post-content h2 {
+    font-size: 1.25rem;
+  }
+
+  .post-content p {
+    padding: 0 15px;
+  }
+
+  .post img {
+    height: 150px; /* Adjust height as needed */
+  }
+
+  .button-container {
+    flex-direction: column; /* Stack buttons vertically on small screens */
+  }
+
+  .download-btn {
+    margin: 5px 0; /* Space between stacked buttons */
+  }
+}
+
+/* Button container for side-by-side layout */
+.button-container {
+  display: flex;
+  justify-content: space-between; /* Space between buttons */
+  align-items: center; /* Vertically center items */
+  padding: 10px 0;
+}
+
+/* Button container for side-by-side layout */
+.button-container > * {
+  margin: 0; /* Remove default margins */
+}
+
+/* Download button styling */
+.download-btn {
+  display: inline-block;
+  padding: 8px 16px;
+  color: black;
+  text-decoration: none;
+  border-radius: 6px;
+  text-align: center; /* Center text inside button */
+  transition: background-color 0.2s;
+}
+
+/* Like button styling */
+.like-btn {
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+  padding: 8px 16px;
+  color: black;
+  text-decoration: none;
+  border-radius: 6px;
+  text-align: center; /* Center text inside button */
+  transition: background-color 0.2s;
+  margin-left: auto; /* Push to the far right */
+}
+
+/* Adjusting layout for buttons inside button-container */
+.button-container .download-btn,
+.button-container .like-btn {
+  margin: 0;
+}
+
+.post-content .button-container .like-btn {
+  margin-left: auto;
+}
+
+/* Responsive adjustments */
+@media (max-width: 600px) {
+  .button-container {
+    flex-direction: column;
+  }
+
+  .download-btn,
+  .like-btn {
+    margin: 5px 0;
+  }
+}
